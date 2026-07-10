@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#05030d" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>RIFT//RIDER</title>
+  </head>
+  <body>
+    <main id="app">
+      <div id="scene" aria-label="Jogo 3D RIFT RIDER"></div>
+
+      <section id="hud" class="hidden" aria-live="polite">
+        <div class="hud-top">
+          <div class="brand-mini">RIFT<span>//</span>RIDER</div>
+          <div class="hud-score">
+            <small>DISTÂNCIA</small>
+            <strong id="score">00000</strong>
+          </div>
+          <div class="hud-zone">
+            <small>ZONA</small>
+            <strong id="zone">01</strong>
+          </div>
+        </div>
+        <div class="combo-wrap">
+          <span id="combo">COMBO ×1</span>
+          <div class="combo-track"><i id="combo-fill"></i></div>
+        </div>
+        <div class="energy-wrap">
+          <span>IMPULSO</span>
+          <div class="energy-track"><i id="energy-fill"></i></div>
+        </div>
+        <div id="shield-indicator" class="shield-indicator hidden">◈ ESCUDO</div>
+      </section>
+
+      <button id="pause-btn" class="icon-btn hidden" aria-label="Pausar">Ⅱ</button>
+      <button id="sound-btn" class="icon-btn sound-btn" aria-label="Alternar som">♪</button>
+
+      <div id="reticle" class="reticle hidden"><i></i><i></i><i></i><i></i></div>
+      <div id="damage-flash"></div>
+      <div id="speed-lines"></div>
+      <div id="toast" role="status"></div>
+
+      <section id="start-screen" class="screen active">
+        <div class="scanline"></div>
+        <div class="panel hero-panel">
+          <p class="eyebrow">SINAL INTERCEPTADO // 2087</p>
+          <h1>RIFT<span>//</span><br />RIDER</h1>
+          <p class="tagline">Atravesse o rasgo. Não olhe para trás.</p>
+          <div class="feature-row">
+            <span>◆ CRISTAIS</span><span>◈ ESCUDO</span><span>» BOOST</span>
+          </div>
+          <div class="instructions">
+            <div><b>ARRASTE</b><small>para pilotar</small></div>
+            <div><b>SEGURE</b><small>o impulso</small></div>
+          </div>
+          <button id="start-btn" class="primary-btn"><span>INICIAR MERGULHO</span><i>›</i></button>
+          <p id="best-score" class="best">RECORDE // 00000</p>
+        </div>
+        <div class="version">PROTÓTIPO 1.0 // THREE.JS</div>
+      </section>
+
+      <section id="pause-screen" class="screen">
+        <div class="panel compact-panel">
+          <p class="eyebrow">CONEXÃO SUSPENSA</p>
+          <h2>PAUSADO</h2>
+          <button id="resume-btn" class="primary-btn"><span>CONTINUAR</span><i>›</i></button>
+          <button id="restart-pause-btn" class="ghost-btn">REINICIAR CORRIDA</button>
+        </div>
+      </section>
+
+      <section id="game-over-screen" class="screen">
+        <div class="panel compact-panel game-over-panel">
+          <p class="eyebrow danger">SINAL PERDIDO</p>
+          <h2>RUPTURA</h2>
+          <div class="result-grid">
+            <div><small>DISTÂNCIA</small><strong id="final-score">00000</strong></div>
+            <div><small>CRISTAIS</small><strong id="final-shards">00</strong></div>
+            <div><small>MELHOR COMBO</small><strong id="final-combo">×1</strong></div>
+          </div>
+          <p id="new-record" class="new-record hidden">NOVO RECORDE PESSOAL</p>
+          <button id="restart-btn" class="primary-btn"><span>TENTAR DE NOVO</span><i>↻</i></button>
+          <button id="home-btn" class="ghost-btn">VOLTAR AO SINAL</button>
+        </div>
+      </section>
+
+      <section id="rotate-hint">
+        <div class="phone-icon">▯</div>
+        <strong>GIRE O CELULAR</strong>
+        <small>RIFT//RIDER foi feito para paisagem</small>
+      </section>
+
+      <div id="controls" class="hidden">
+        <div id="joystick-zone" aria-label="Controle de movimento">
+          <div id="joystick-ring"><i id="joystick-thumb"></i></div>
+        </div>
+        <button id="boost-btn" aria-label="Ativar impulso"><b>»</b><span>BOOST</span></button>
+      </div>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
